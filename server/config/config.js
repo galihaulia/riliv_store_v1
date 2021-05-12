@@ -23,6 +23,9 @@ module.exports = {
   },
   production: {
     url: process.env.DATABASE_URL+`?sslmode=require`,
-    dialect: process.env.DATABASE_DIALECT
+    dialect: process.env.DATABASE_DIALECT,
+    ssl: {
+      rejectUnauthorized: false
+    }
   },
 }
