@@ -23,9 +23,13 @@ module.exports = {
   },
   production: {
     url: process.env.DATABASE_URL+`?sslmode=require`,
-    dialect: 'postgres',
-    ssl: {
-      rejectUnauthorized: false
-    }
+    username: process.env.PGNAME,
+    password: process.env.PGPASSWORD,
+    host: process.env.PGHOST,
+    port: process.env.PGPORT,
+    database: process.env.PGDATABASE,
+    dialect: process.env.PGDIALECT,
+    login_field: process.env.LOGIN_FIELD,
+    timezone: 'Asia/Jakarta'
   },
 }
