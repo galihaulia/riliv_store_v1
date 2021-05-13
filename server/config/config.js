@@ -22,7 +22,8 @@ module.exports = {
     timezone: 'Asia/Jakarta'
   },
   production: {
-    url: process.env.DATABASE_URL+`?sslmode=require`,
+    // url: process.env.DATABASE_URL+`?sslmode=require`,
+    url: process.env.DATABASE_URL,
     // username: process.env.PGNAME,
     // password: process.env.PGPASSWORD,
     // host: process.env.PGHOST,
