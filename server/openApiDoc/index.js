@@ -17,7 +17,7 @@ let apiDoc = {
     },
     servers: [
         {
-            url: "/api/v1",
+            url: "",
         },
     ],
     // security: ["bearerAuth"],

@@ -28,7 +28,7 @@ router.use(usersRoute)
 router.use(itemsRoute)
 router.use(reportsRoute)
 
-app.use('/api/v1',router)
+app.use('/',router)
 app.use('/api-doc',swaggerUI.serve,swaggerUI.setup(openApiDoc.default()))
 app.get('*', (req, res, next) => {
     res.status(200).json({
