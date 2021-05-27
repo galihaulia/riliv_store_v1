@@ -1,4 +1,4 @@
-# app_store
+# riliv_store_v1
 
 online shop application
 
