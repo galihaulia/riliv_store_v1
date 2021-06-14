@@ -140,146 +140,118 @@ const schema = {
   },
 };
 const paths = {
-  '/products': {
-    get: {
-      tags: [tag],
-      parameters: [],
-      responses: {
-        200: {
-          description: 'All Product',
-          content: {
-            'application/json': {
-              schema: util1.getSchemaResponse(
-                'productsSchema',
-                'productsSchema',
-                'object'
-              ),
-            },
-          },
-        },
-      },
-    },
-  },
-  '/product': {
-    get: {
-      tags: [tag],
-      parameters: [
-        {
-          name: 'product_id',
-          in: 'query',
-          schema: {
-            type: 'integer',
-          },
-          required: true,
-        },
-      ],
-      responses: {
-        200: {
-          description: 'Product',
-          content: {
-            'application/json': {
-              schema: util1.getSchemaResponse(
-                'productSchema',
-                'productSchema',
-                'object'
-              ),
-            },
-          },
-        },
-      },
-    },
-    post: {
-      tags: [tag],
-      requestBody: {
-        content: {
-          'application/json': {
-            schema: util1.getSchemaRequest('createProductSchema'),
-          },
-        },
-      },
-      responses: {
-        200: {
-          description: 'Create Product',
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  message: {
-                    type: 'string',
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-    put: {
-      tags: [tag],
-      requestBody: {
-        content: {
-          'application/json': {
-            schema: util1.getSchemaRequest('updateProductSchema'),
-          },
-        },
-      },
-      responses: {
-        200: {
-          description: 'Update Product',
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  message: {
-                    type: 'string',
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-    delete: {
-      tags: [tag],
-      requestBody: {
-        content: {
-          'application/json': {
-            schema: util1.getSchemaRequest('deleteProductSchema'),
-          },
-        },
-      },
-      responses: {
-        200: {
-          description: 'Delete Product',
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  message: {
-                    type: 'string',
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-  //   '/product-buy': {
+  //   '/products': {
+  //     get: {
+  //       tags: [tag],
+  //       parameters: [],
+  //       responses: {
+  //         200: {
+  //           description: 'All Product',
+  //           content: {
+  //             'application/json': {
+  //               schema: util1.getSchemaResponse(
+  //                 'productsSchema',
+  //                 'productsSchema',
+  //                 'object'
+  //               ),
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  //   '/product': {
+  //     get: {
+  //       tags: [tag],
+  //       parameters: [
+  //         {
+  //           name: 'product_id',
+  //           in: 'query',
+  //           schema: {
+  //             type: 'integer',
+  //           },
+  //           required: true,
+  //         },
+  //       ],
+  //       responses: {
+  //         200: {
+  //           description: 'Product',
+  //           content: {
+  //             'application/json': {
+  //               schema: util1.getSchemaResponse(
+  //                 'productSchema',
+  //                 'productSchema',
+  //                 'object'
+  //               ),
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
   //     post: {
   //       tags: [tag],
   //       requestBody: {
   //         content: {
   //           'application/json': {
-  //             schema: util1.getSchemaRequest('buyProductSchema'),
+  //             schema: util1.getSchemaRequest('createProductSchema'),
   //           },
   //         },
   //       },
   //       responses: {
   //         200: {
-  //           description: 'Buy Product',
+  //           description: 'Create Product',
+  //           content: {
+  //             'application/json': {
+  //               schema: {
+  //                 properties: {
+  //                   message: {
+  //                     type: 'string',
+  //                   },
+  //                 },
+  //               },
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //     put: {
+  //       tags: [tag],
+  //       requestBody: {
+  //         content: {
+  //           'application/json': {
+  //             schema: util1.getSchemaRequest('updateProductSchema'),
+  //           },
+  //         },
+  //       },
+  //       responses: {
+  //         200: {
+  //           description: 'Update Product',
+  //           content: {
+  //             'application/json': {
+  //               schema: {
+  //                 properties: {
+  //                   message: {
+  //                     type: 'string',
+  //                   },
+  //                 },
+  //               },
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //     delete: {
+  //       tags: [tag],
+  //       requestBody: {
+  //         content: {
+  //           'application/json': {
+  //             schema: util1.getSchemaRequest('deleteProductSchema'),
+  //           },
+  //         },
+  //       },
+  //       responses: {
+  //         200: {
+  //           description: 'Delete Product',
   //           content: {
   //             'application/json': {
   //               schema: {
@@ -295,26 +267,54 @@ const paths = {
   //       },
   //     },
   //   },
-  //   '/product-transactions': {
-  //     get: {
-  //       tags: [tag],
-  //       parameters: [],
-  //       responses: {
-  //         200: {
-  //           description: 'List Transactions',
-  //           content: {
-  //             'application/json': {
-  //               schema: util1.getSchemaResponse(
-  //                 'listTransactionsSchema',
-  //                 'listTransactionsSchema',
-  //                 'object'
-  //               ),
-  //             },
-  //           },
-  //         },
-  //       },
-  //     },
-  //   },
+  '/product-buy': {
+    post: {
+      tags: [tag],
+      requestBody: {
+        content: {
+          'application/json': {
+            schema: util1.getSchemaRequest('buyProductSchema'),
+          },
+        },
+      },
+      responses: {
+        200: {
+          description: 'Buy Product',
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  message: {
+                    type: 'string',
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+  '/product-transactions': {
+    get: {
+      tags: [tag],
+      parameters: [],
+      responses: {
+        200: {
+          description: 'List Transactions',
+          content: {
+            'application/json': {
+              schema: util1.getSchemaResponse(
+                'listTransactionsSchema',
+                'listTransactionsSchema',
+                'object'
+              ),
+            },
+          },
+        },
+      },
+    },
+  },
 };
 
 exports.default = { schema, paths };
