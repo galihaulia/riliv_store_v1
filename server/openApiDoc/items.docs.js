@@ -86,20 +86,20 @@ const schema = {
       },
     },
   },
-  buyProductSchema: {
-    title: 'Buy Product',
-    properties: {
-      product_id: {
-        type: 'integer',
-      },
-      quantity: {
-        type: 'number',
-      },
-      message: {
-        type: 'string',
-      },
-    },
-  },
+  //   buyProductSchema: {
+  //     title: 'Buy Product',
+  //     properties: {
+  //       product_id: {
+  //         type: 'integer',
+  //       },
+  //       quantity: {
+  //         type: 'number',
+  //       },
+  //       message: {
+  //         type: 'string',
+  //       },
+  //     },
+  //   },
   listTransactionsSchema: {
     title: 'List Transaction',
     type: 'object',
