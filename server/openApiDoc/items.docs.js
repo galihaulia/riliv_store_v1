@@ -100,44 +100,44 @@ const schema = {
       },
     },
   },
-  //   listTransactionsSchema: {
-  //     title: 'List Transaction',
-  //     type: 'object',
-  //     properties: {
-  //       sumOfTransaction: {
-  //         type: 'number',
-  //       },
-  //       list: {
-  //         type: 'array',
-  //         items: {
-  //           type: 'object',
-  //           properties: {
-  //             id: {
-  //               type: 'number',
-  //             },
-  //             codeTransaction: {
-  //               type: 'string',
-  //             },
-  //             buyerId: {
-  //               type: 'number',
-  //             },
-  //             productId: {
-  //               type: 'number',
-  //             },
-  //             name: {
-  //               type: 'string',
-  //             },
-  //             desc: {
-  //               type: 'string',
-  //             },
-  //             price: {
-  //               type: 'number',
-  //             },
-  //           },
-  //         },
-  //       },
-  //     },
-  //   },
+  listTransactionsSchema: {
+    title: 'List Transaction',
+    type: 'object',
+    properties: {
+      sumOfTransaction: {
+        type: 'number',
+      },
+      list: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            id: {
+              type: 'number',
+            },
+            codeTransaction: {
+              type: 'string',
+            },
+            buyerId: {
+              type: 'number',
+            },
+            productId: {
+              type: 'number',
+            },
+            name: {
+              type: 'string',
+            },
+            desc: {
+              type: 'string',
+            },
+            price: {
+              type: 'number',
+            },
+          },
+        },
+      },
+    },
+  },
 };
 const paths = {
   '/products': {
