@@ -86,20 +86,20 @@ const schema = {
       },
     },
   },
-  //   buyProductSchema: {
-  //     title: 'Buy Product',
-  //     properties: {
-  //       product_id: {
-  //         type: 'integer',
-  //       },
-  //       quantity: {
-  //         type: 'number',
-  //       },
-  //       message: {
-  //         type: 'string',
-  //       },
-  //     },
-  //   },
+  buyProductSchema: {
+    title: 'Buy Product',
+    properties: {
+      product_id: {
+        type: 'integer',
+      },
+      quantity: {
+        type: 'number',
+      },
+      message: {
+        type: 'string',
+      },
+    },
+  },
   listTransactionsSchema: {
     title: 'List Transaction',
     type: 'object',
@@ -267,54 +267,54 @@ const paths = {
       },
     },
   },
-  '/product-buy': {
-    post: {
-      tags: [tag],
-      requestBody: {
-        content: {
-          'application/json': {
-            schema: util1.getSchemaRequest('buyProductSchema'),
-          },
-        },
-      },
-      responses: {
-        200: {
-          description: 'Buy Product',
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  message: {
-                    type: 'string',
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-  '/product-transactions': {
-    get: {
-      tags: [tag],
-      parameters: [],
-      responses: {
-        200: {
-          description: 'List Transactions',
-          content: {
-            'application/json': {
-              schema: util1.getSchemaResponse(
-                'listTransactionsSchema',
-                'listTransactionsSchema',
-                'object'
-              ),
-            },
-          },
-        },
-      },
-    },
-  },
+  //   '/product-buy': {
+  //     post: {
+  //       tags: [tag],
+  //       requestBody: {
+  //         content: {
+  //           'application/json': {
+  //             schema: util1.getSchemaRequest('buyProductSchema'),
+  //           },
+  //         },
+  //       },
+  //       responses: {
+  //         200: {
+  //           description: 'Buy Product',
+  //           content: {
+  //             'application/json': {
+  //               schema: {
+  //                 properties: {
+  //                   message: {
+  //                     type: 'string',
+  //                   },
+  //                 },
+  //               },
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  //   '/product-transactions': {
+  //     get: {
+  //       tags: [tag],
+  //       parameters: [],
+  //       responses: {
+  //         200: {
+  //           description: 'List Transactions',
+  //           content: {
+  //             'application/json': {
+  //               schema: util1.getSchemaResponse(
+  //                 'listTransactionsSchema',
+  //                 'listTransactionsSchema',
+  //                 'object'
+  //               ),
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
 };
 
 exports.default = { schema, paths };
