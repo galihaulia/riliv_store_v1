@@ -10,6 +10,7 @@ const {
   productBuy,
   listTransactions,
   productsBuy,
+  listOrders,
 } = require('../controllers/items');
 
 router.get('/products', authenticate, getAllProducts);
@@ -18,8 +19,10 @@ router.post('/product', authenticate, createProduct);
 router.put('/product', authenticate, updateProduct);
 router.delete('/product', authenticate, deleteProduct);
 
-router.post('/product-buy', authenticate, productBuy);
+// router.post('/product-buy', authenticate, productBuy);
+// router.get('/product-transactions', authenticate, listTransactions);
+
 router.post('/products-buy', authenticate, productsBuy);
-router.get('/product-transactions', authenticate, listTransactions);
+router.get('/product-orders', authenticate, listOrders);
 
 module.exports = router;
