@@ -186,6 +186,9 @@ const schema = {
             isFulfillment: {
               type: 'boolean',
             },
+            dateCreation: {
+              type: 'string',
+            },
           },
         },
       },

@@ -242,6 +242,7 @@ exports.listOrders = asyncHandler(async (req, res, next) => {
         price: order.price,
         isPayment: order.isPayment,
         isFulfillment: order.isFulfillment,
+        dateCreation: order.createdAt,
       };
     });
   }
